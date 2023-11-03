@@ -1,16 +1,16 @@
 @font-face {
-  font-family: Vazirmatn;
-  src: url("./Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.eot");
-  src: url("./Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.eot")
-      format("embedded-opentype"),
-    url("./Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.woff2")
-      format("woff2"),
-    url("./Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.woff") format("woff"),
-    url("./Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.ttf")
-      format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
+    font-family: Vazirmatn;
+    src: url("/static/font/vazir/Vazir-Medium-FD-WOL.eot");
+    src: url("/static/font/vazir/Vazir-Medium-FD-WOL.eot")
+        format("embedded-opentype"),
+      url("/static/font/vazir/Vazir-Medium-FD-WOL.woff2")
+        format("woff2"),
+      url("/static/font/vazir/Vazir-Medium-FD-WOL.woff") format("woff"),
+      url("/static/font/vazir/Vazir-Medium-FD-WOL.ttf")
+        format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
 * {
   padding: 0px;
   margin: 0px;
