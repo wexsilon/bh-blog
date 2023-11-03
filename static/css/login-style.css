@@ -1,0 +1,66 @@
+@font-face {
+  font-family: Vazirmatn;
+  src: url("./Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.eot");
+  src: url("./Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.eot")
+      format("embedded-opentype"),
+    url("./Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.woff2")
+      format("woff2"),
+    url("./Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.woff") format("woff"),
+    url("./Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Vazirmatn, sans-serif;
+  /* overflow-x: hidden; */
+  background-color: white;
+}
+.hero {
+  height: 100vh;
+  width: 100%;
+  /* background: rgb(232, 232, 232);
+  background: linear-gradient(
+    217deg,
+    rgba(232, 232, 232, 1) 0%,
+    rgba(120, 120, 120, 1) 44%,
+    rgba(82, 82, 82, 1) 100%
+  ); */
+  
+}
+@media (max-width: 576px){
+  
+  .row{
+    height: 100%;
+    width: 100%;
+  }
+  
+  
+}
+@media (min-width: 577px){
+  
+  
+  .col{
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border: 1px solid #dee2e6;
+  }
+  
+}
+
+.col{
+  width: 450px;
+}
+
+.a-hover{
+  text-decoration: none;
+}
+.a-hover:hover{
+  text-decoration: underline;
+}
+
