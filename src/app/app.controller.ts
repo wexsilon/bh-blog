@@ -8,6 +8,6 @@ export class AppController {
 
     @Get()
     homeGet(@Res() res: Response) {
-        res.render('index.pug', { });
+        res.render('index.pug', {});
     }
 }
