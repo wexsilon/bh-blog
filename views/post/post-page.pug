@@ -1,0 +1,51 @@
+extends ../base-page.pug
+
+block variables
+    - const pageTitle = 'وبلاگ | خانه';
+
+block extraCss
+    link(rel="stylesheet", href="/static/css/post-page.css")
+
+block content
+    main.mt-5
+      section
+        .container
+          .row
+            .col-md-9
+              h4.fs-5.text-decoration-none
+                a.fs-5.text-decoration-none(href) موضوع
+              h3.fs-1.fw-bold لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم
+              ul.d-flex.list-unstyled
+                li.me-4.text-muted(style="font-size: 14px") تاریخ:1402/6/3
+                li.me-4.text-muted(style="font-size: 14px") 50 بازدید
+              .card.border-0
+                img.rounded.post-banner(src="image/image-1.jpg", alt)
+              div
+                h3.mt-3.fs-2 سرتیتر
+                p.fw-light.fs-6.mt-3
+                  | لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
+                  a.text-decoration-none(href) که لازم است، و
+                  | برای شرایط فعلی کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، نیازت
+                  b پیوسته اهل دنیای موجود طراحی اساسا مورد 
+                  | استفاده قرار گیرد.
+                ul.fw-light.fs-6
+                  li لورم
+                  li لورم
+                  li لورم
+                  li لورم
+                  li لورم
+                .row.justify-content-center
+                  .col-10.mt-4
+                    .card.border-0
+                      img.rounded.post-img(src="image/image-1.jpg", alt)
+            .col-md-3
+
+block extraJs
+    script.
+      window.addEventListener("scroll", function () {
+              var nav = document.querySelector("nav");
+              nav.classList.toggle("border-bottom", window.scrollY > 0);
+              nav.classList.toggle("shadow-sm", window.scrollY > 0);
+              nav.classList.toggle("py-6", window.scrollY === 0);
+            });
+  
