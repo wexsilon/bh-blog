@@ -1,0 +1,14 @@
+extends ../base-html.pug
+
+block variables
+    - const pageTitle = 'وبلاگ | ورود';
+
+block extraCss
+    link(rel="stylesheet", href="/static/css/auth-style.css")
+
+block pageBody
+    section.hero.d-flex.justify-content-center
+        .row.align-content-center.justify-content-center
+            .col.bg-white.rounded.p-4.p-sm-5.pb-3.pb-sm-3
+                .container-fluid
+                    block content

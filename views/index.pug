@@ -1,4 +1,4 @@
-extends base-html.pug
+extends base-page.pug
 
 block variables
     - const pageTitle = 'وبلاگ | خانه';
@@ -6,90 +6,8 @@ block variables
 block extraCss
     link(rel="stylesheet", href="/static/css/index.css")
 
-block pageBody
-    header
-        nav.navbar.navbar-expand-md.bg-white.fixed-top.py-6
-            .container.flex-column.flex-md-row.d-flex
-                .d-flex.w-100
-                    .d-flex.w-100
-                        .d-flex.me-3.pe-2
-                            button.navbar-toggler.me-3.border-0(type="button", data-bs-toggle="offcanvas", data-bs-target="#offcanvasNavbar", aria-controls="offcanvasNavbar", aria-label="Toggle navigation")
-                                span.navbar-toggler-icon
-                            a.navbar-brand.fw-bolder.justify-content-center(href="index.html") وبلاگ
-                            a.text-dark.mt-1(href="index.html")
-                                i.bi.bi-house-fill.d-md-none.align-self-center.fs-5.me-3
-                            a.text-dark.mt-1(href="login.html")
-                                i.bi.bi-person-circle.d-md-none.align-self-center.fs-5
-                        .offcanvas.offcanvas-start#offcanvasNavbar(tabindex="-1", aria-labelledby="offcanvasNavbarLabel")
-                            .offcanvas-header
-                                h5.offcanvas-title.fw-bolder#offcanvasNavbarLabel وبلاگ 
-                                button.btn-close(type="button", data-bs-dismiss="offcanvas", aria-label="Close")
-                            .offcanvas-body
-                                ul.navbar-nav.flex-grow-1.pe-3
-                                    li.nav-item
-                                        a.nav-link.active.d-flex(aria-current="page", href="index.html")
-                                            i.bi.bi-house-fill.me-1
-                                            p.mb-0 خانه
-                                    li.nav-item
-                                        a.nav-link.d-flex(aria-current="page", href="login.html")
-                                            i.bi.bi-person-circle.me-1
-                                            p.mb-0 ورود
-                                    li.nav-item.dropdown
-                                        a.nav-link.dropdown-toggle(href="#", role="button", data-bs-toggle="dropdown", aria-expanded="false") مطالب
-                                        ul.dropdown-menu
-                                            li
-                                                a.dropdown-item(href="#") مطلب
-                                            li
-                                                a.dropdown-item(href="#") مطلب بیشتر
-                                            li
-                                                hr.dropdown-divider
-                                            li
-                                                a.dropdown-item(href="#") مطلب دیگر
-                    button.btn.btn-outline-dark.border-0.d-md-none.d-flex.justify-content-center(type="button", data-bs-toggle="collapse", data-bs-target="#collapseExample", aria-expanded="false", aria-controls="collapseExample")
-                        i.bi.bi-search
-                    .dropdown.d-md-none.user-icon
-                        a.h-100(href, data-bs-toggle="dropdown", aria-expanded="false")
-                            img.user-icon-img(src="/static/img/image-1.jpg", alt)
-                        ul.dropdown-menu.dropdown-menu-end
-                            li
-                                a.dropdown-item(href="setting-page.html")
-                                    i.bi.bi-person-circle.me-2
-                                    | پنل کاربری
-                            li
-                                a.dropdown-item(href="new-post.html")
-                                    i.bi.bi-plus-circle.me-2
-                                    | پست جدید
-                            li
-                                a.dropdown-item(href="#")
-                                    i.bi.bi-box-arrow-right.me-2
-                                    | خروج
-                .w-100
-                    .collapse.w-100.d-md-flex#collapseExample
-                        .input-group.my-2.justify-content-end.my-md-0
-                            svg.d-md-none.search-icon(xmlns="http://www.w3.org/2000/svg", x="0px", y="0px", width="20", height="20", viewBox="0 0 50 50")
-                                path(d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z")
-                            input.form-control.input-search.mt-2.mt-md-0(type="text", placeholder="جستجو... ", aria-label="Recipient\'s username", aria-describedby="button-addon2")
-                            button.btn.border.pt-2.border-start-0.d-none.d-md-flex#button-addon2(type="button")
-                                i.bi.bi-search.text-muted
-                        .dropdown.user-icon
-                            a.d-none.d-md-flex.h-100(href, data-bs-toggle="dropdown", aria-expanded="false")
-                                img.user-icon-img(src="/static/img/image-1.jpg", alt)
-                            ul.dropdown-menu.dropdown-menu-end
-                                li
-                                    a.dropdown-item(href="setting-page.html")
-                                        i.bi.bi-person-circle.me-2
-                                        | پنل کاربری
-                                li
-                                    a.dropdown-item(href="new-post.html")
-                                        i.bi.bi-plus-circle.me-2
-                                        | پست جدید
-                                li
-                                    a.dropdown-item(href="#")
-                                        i.bi.bi-box-arrow-right.me-2
-                                        | خروج
-    //  navbar end 
+block content
     main
-        //  مطالب start 
         section
             .container
                 .row
@@ -126,10 +44,8 @@ block pageBody
                                     h5.card-title.d-inline-flex.text-start
                                         span.badge.bg-gradient.text-bg-dark لورم
                                     p.card-text.text-start لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-        //   مطالب end 
         br
-        br
-        //  آخرین مطالب start 
+        br 
         section
             .container
                 .row
@@ -202,57 +118,9 @@ block pageBody
                                     a.page-link.focus-ring.focus-ring-dark.text-decoration-none.border.text-muted(href="#", aria-label="Next")
                                         span(aria-hidden="true") »
                     .col-12.col-md-2.col-lg-4
-        //  آخرین مطالب end 
         br
-        //  footer start 
-    footer.bg-secondary
-        .container
-            .row
-                .col.mt-4.mb-2
-                    h3.fw-bolder.text-center.text-md-start.text-white.fs-1 وبلاگ
-            .row.text-white
-                .col-md-4.flex-column.align-items-center.align-items-md-start.pe-md-5
-                    .row.justify-content-center.justify-content-md-start.mb-2
-                        .col-2.d-flex.justify-content-center.px-4
-                            a(href)
-                                i.footer-hover.bi.bi-envelope.fs-3
-                        .col-2.d-flex.justify-content-center.px-4
-                            a(href)
-                                i.footer-hover.bi.bi-instagram.fs-3
-                        .col-2.d-flex.justify-content-center.px-4
-                            a(href)
-                                i.footer-hover.bi.bi-facebook.fs-3
-                        .col-2.d-flex.justify-content-center.px-4
-                            a(href)
-                                i.footer-hover.bi.bi-twitter-x.fs-3
-                    p.text-center.text-md-start.footer-info لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون 
-                    p
-                        i.bi.bi-telephone-fill.fs-6
-                        |  +98 9**-***-****
-                hr.d-md-none
-                .col-md-4.d-flex.justify-content-center
-                    ul.list-unstyled.text-center.text-white
-                        li.mt-1
-                            h5.fw-bolder.fs-3.footer-hover با وبلاگ
-                        li.mt-1
-                            a.text-decoration-none.footer-hover(href, style="font-size: 0.9rem") تماس با ما
-                        li.mt-1
-                            a.text-decoration-none.footer-hover(href, style="font-size: 0.9rem") درباره ما
-                        li.mt-1
-                            a.text-decoration-none.footer-hover(href, style="font-size: 0.9rem") همکاری با ما
-                hr.d-md-none.px-5
-                .col-md-4.d-flex.justify-content-center
-                    ul.list-unstyled.text-center.text-white
-                        li.mt-1
-                            h5.fw-bolder.fs-3.footer-hover لورم
-                        li.mt-1
-                            a.text-decoration-none.footer-hover(href, style="font-size: 0.9rem") لورم
-                        li.mt-1
-                            a.text-decoration-none.footer-hover(href, style="font-size: 0.9rem") لورم
-                        li.mt-1
-                            a.text-decoration-none.footer-hover(href, style="font-size: 0.9rem") لورم
-    //  footer end 
-    
+
+block extraJs
     script.
         window.addEventListener("scroll", function () {
             var nav = document.querySelector("nav");

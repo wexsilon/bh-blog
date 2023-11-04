@@ -1,0 +1,157 @@
+extends ../base-page.pug
+
+block variables
+    - const pageTitle = 'وبلاگ | تنظیمات';
+
+block extraCss
+    link(rel="stylesheet", href="/static/css/setting-page.css")
+
+block content
+    main.mt-5
+        section
+            .container
+                .row.edit-container.shadow-sm
+                    .col-md-4.col-lg-3.aside.p-0.p-2
+                        ul.list-unstyled.h-100.pb-0.mb-0.d-flex.flex-column.justify-content-evenly.justify-content-md-start
+                            li
+                                a.btn3637.btn38.active.d-flex(href="/setting")
+                                    i.bi.bi-person-circle.me-2.py-2
+                                    p.mb-0.py-2 پنل کاربری
+                            li
+                                a.btn3637.btn38.d-flex(href="/post/create")
+                                    i.bi.bi-plus-circle.me-2.py-2
+                                    p.mb-0.py-2 پست جدید
+                            li.exit.mt-auto
+                                a.btn3637.exit-btn.d-flex(href="/auth/logout")
+                                    i.bi.bi-box-arrow-right.me-2.py-2
+                                    p.mb-0.py-2 خروج
+                    .col-md-8.col-lg-9.main.p-4.bg-white(dir="ltr")
+                        h4.mb-3.fs-2(dir="rtl") اطلاعات اکانت
+                        .username.d-flex(dir="rtl")
+                            .d-flex.py-3.justify-content-center(dir="rtl")
+                                a.edit-avatar.me-4.overflow-hidden(data-bs-toggle="modal", data-bs-target="#exampleModal")
+                                    img.edit-avatar-img.justify-self-center(src="/static/img/img-3.avif", alt)
+                                    svg.edit-avatar-svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", fill="currentColor", viewBox="0 0 16 16")
+                                        path(d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z")
+                                        path(fill-rule="evenodd", d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z")
+                            .modal.fade#exampleModal(tabindex="-1", aria-labelledby="exampleModalLabel", aria-hidden="true", dir="rtl")
+                                .modal-dialog.modal-dialog-centered.modal-dialog-scrollable
+                                    .modal-content
+                                        .modal-body(dir="ltr")
+                                            .row.d-flex.flex-row.justify-content-between.p-3.fs-4
+                                                button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
+                                                | پروفایل
+                                            .row.p-3
+                                                .drag-area.py-3
+                                                    .icon
+                                                        i.fas.fa-cloud-upload-alt
+                                                    .header برای بارگذاری بکش و رها کن
+                                                    span یا
+                                                    button.btn.btn-dark(type="button") انتخاب کن
+                                                    input(type="file", hidden)
+                                            .row.justify-content-center.py-3
+                                                button.btn.btn-dark.w-auto.fs-5.px-4(type="button") ثبت
+                            .user-text.col-md-6.d-flex.align-items-center
+                                form.col.form-floating.mt-3.mt-md-0.d-flex.flex-row
+                                    input.form-control.border-0#floatingPassword(autocomplete="off", type="text", placeholder, value=" ممد اصغر")
+                                    label(for="floatingPassword")
+                                        i.bi.bi-person-fill.me-2
+                                        | نام کاربری
+                        .info.pb-3(dir="rtl")
+                            .info-text.mb-0
+                                .form-container.d-flex.row.mb-0
+                                    .col-md-6.form-floating.d-flex.flex-row
+                                        input.form-control#floatingPassword(type="text", placeholder, value="اصغر")
+                                        label(for="floatingPassword")
+                                            i.bi.bi-person-fill.me-2
+                                            | نام
+                                    .col-md-6.form-floating.d-flex.flex-row
+                                        input.form-control#floatingPassword(type="text", placeholder, value="اصغر زاده")
+                                        label(for="floatingPassword")
+                                            i.bi.bi-person-fill.me-2
+                                            | نام خانوادگی
+                                    .col-md-6.form-floating.d-flex.flex-row
+                                        input.form-control#floatingPassword(type="email", placeholder, value="example@gmail.com")
+                                        label(for="floatingPassword")
+                                            i.bi.bi-envelope.me-2
+                                            | آدرس ایمیل
+                                    .col-md-6.form-floating.d-flex.flex-row
+                                        input.form-control#floatingPassword(type="password", placeholder, value="example")
+                                        label(for="floatingPassword")
+                                            i.bi.bi-key-fill.me-2
+                                            | رمزعبور
+                                    .form-floating.textarea.d-flex.flex-row
+                                        textarea.form-control#floatingTextarea(placeholder)
+                                        label(for="floatingTextarea") درباره من
+                                    div(style="padding: 0")
+                                        button.btn.btn-secondary.w-100.mt-5.px-3.py-3(type="button") ثبت تغییرات
+    br
+    br
+block extraJs
+    script.
+        window.addEventListener("scroll", function () {
+            var nav = document.querySelector("nav");
+            nav.classList.toggle("border-bottom", window.scrollY > 0);
+            nav.classList.toggle("shadow-sm", window.scrollY > 0);
+            nav.classList.toggle("py-6", window.scrollY === 0);
+                    });
+
+    script.
+        const myModal = document.getElementById("myModal");
+            const myInput = document.getElementById("myInput");
+
+            myModal.addEventListener("shown.bs.modal", () => {
+                myInput.focus();
+            });
+    script.
+        const dragArea = document.querySelector(".drag-area");
+            const header = document.querySelector(".header");
+            const button = document.querySelector("button");
+            const input = document.querySelector("input");
+            let file;
+            button.onclick = () => {
+                input.click();
+            };
+            input.addEventListener("change", function () {
+                file = this.files[0];
+                showImage();
+                dragArea.classList.add("active");
+            });
+            dragArea.addEventListener("dragover", function (event) {
+                // console.log('فایل در حال وارد شدن است.')
+                event.preventDefault();
+                dragArea.classList.add("active");
+            });
+            dragArea.addEventListener("dragleave", function () {
+                // console.log('فایل در حال خارج شدن است.')
+                dragArea.classList.remove("active");
+            });
+            dragArea.addEventListener("drop", function (event) {
+                // console.log('عکس رها شد')
+                event.preventDefault();
+                file = event.dataTransfer.files[0];
+                showImage();
+            });
+            function showImage() {
+                let fileType = file.type;
+                let validExtensions = ["image/jpeg", "image/jpg", "image/png"];
+                if (validExtensions.includes(fileType)) {
+                    let fileReader = new FileReader();
+                    fileReader.onload = () => {
+                        let fileURL = fileReader.result;
+                        let imgTag = `<img src="${fileURL}" />`;
+                        dragArea.innerHTML = imgTag;
+                    };
+
+                    fileReader.readAsDataURL(file);
+                } else {
+                    alert("فایل انتخابی عکس نیست لطفا عکس انتخاب کنید.");
+                    dragArea.classList.remove("active");
+                }
+            }
+    script.
+        $("input[type='text']").bind("focus", function () {
+            $(this).css("background-color", "white");
+            });
+    
+
