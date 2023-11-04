@@ -1,7 +1,7 @@
 extends ../base-page.pug
 
 block variables
-    - const pageTitle = 'وبلاگ | خانه';
+    - const pageTitle = `وبلاگ | ${article.title}`;
 
 block extraCss
     link(rel="stylesheet", href="/static/css/post-page.css")
@@ -19,7 +19,7 @@ block content
                 li.me-4.text-muted(style="font-size: 14px") تاریخ:1402/6/3
                 li.me-4.text-muted(style="font-size: 14px") 50 بازدید
               .card.border-0
-                img.rounded.post-banner(src="image/image-1.jpg", alt)
+                img.rounded.post-banner(src="/static/img/image-1.jpg", alt)
               div
                 h3.mt-3.fs-2 سرتیتر
                 p.fw-light.fs-6.mt-3
@@ -37,9 +37,9 @@ block content
                 .row.justify-content-center
                   .col-10.mt-4
                     .card.border-0
-                      img.rounded.post-img(src="image/image-1.jpg", alt)
+                      img.rounded.post-img(src="/static/img/image-1.jpg", alt)
             .col-md-3
-
+    br
 block extraJs
     script.
       window.addEventListener("scroll", function () {
