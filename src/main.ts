@@ -6,7 +6,7 @@ import morgan from 'morgan';
 
 async function bootstrap() {
     const app = await NestFactory.create<NestExpressApplication>(AppModule);
-    app.use(morgan('dev'))
+    app.use(morgan('dev'));
     app.enableCors();
     app.setBaseViewsDir(join(__dirname, '..', 'views'));
     app.setViewEngine('pug');
